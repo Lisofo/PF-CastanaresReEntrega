@@ -145,23 +145,8 @@ div img {
   .libro5 {
     width: 80%;
     height: 10%;
-    margin-bottom: 1rem; } }
-
-/* Para pantallas aún más pequeñas */
-@media (max-width: 576px) {
-  .contenedor {
-    grid-template-rows: repeat(5, 15%); }
-  .libro2,
-  .libro4 {
-    display: block; }
-  .libro1, .libro2, .libro3, .libro4, .libro5,
-  .libro2,
-  .libro3,
-  .libro4,
-  .libro5 {
-    width: 80%;
-    height: 100px;
-    margin-bottom: 1rem; } }
+    margin-bottom: 1rem;
+    display: block; } }
 
 /*Menu*/
 .contenedor {

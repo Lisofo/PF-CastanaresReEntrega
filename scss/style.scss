@@ -236,29 +236,10 @@ div {
     .libro5 {
         @include productos(80%, 10%);
         margin-bottom: 1rem;
-    }
-}
-
-/* Para pantallas aún más pequeñas */
-@media (max-width: 576px) {
-    .contenedor {
-        grid-template-rows: repeat(5, 15%);
-    }
-
-    .libro2,
-    .libro4 {
         display: block;
     }
-
-    .libro1,
-    .libro2,
-    .libro3,
-    .libro4,
-    .libro5 {
-        @include productos(80%, 100px);
-        margin-bottom: 1rem;
-    }
 }
+
 
 /*Menu*/
 .contenedor {
