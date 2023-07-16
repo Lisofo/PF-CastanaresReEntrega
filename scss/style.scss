@@ -1,0 +1,436 @@
+@import "extra/vars";
+@import "extra/mixin";
+
+/* reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: $font-principal;
+}
+
+/* css general y main */
+#logo {
+    width: 231px;
+    height: 186px;
+    vertical-align: middle;
+    margin-left: 75px;
+}
+
+#libro {
+    display: flex;
+
+    #front {
+        width: 400px;
+        height: 250px;
+        opacity: 0.9;
+        object-position: left;
+    }
+
+    #texto1 {
+        text-align: justify;
+        font-size: 1rem;
+        padding: 2rem;
+        margin: 1rem;
+        background-color: $color-fondo;
+        color: black;
+        width: 700px;
+    }
+}
+
+body {
+    background-repeat: no-repeat;
+    background-image: url(../img/fondo.jpg);
+    background-size: cover;
+
+    .productos-recomendados {
+        text-align: center;
+        background-color: $color-fondo;
+        margin-left: 5%;
+        margin-right: 5%;
+        width: 90%;
+    }
+}
+
+header {
+    h1 {
+        color: rgb(58, 21, 0);
+        text-transform: uppercase;
+        text-decoration: underline;
+        font-size: 50px;
+        text-align: center;
+    }
+
+    h2 {
+        color: rgb(58, 21, 0);
+        text-transform: uppercase;
+        font-size: 30px;
+        text-align: center;
+    }
+
+    nav {
+        ul {
+            list-style: none;
+            text-align: center;
+            background-color: $color-fondo;
+            color: black;
+
+            li {
+                display: inline;
+                margin: 20px;
+                font-size: 22px;
+
+                a {
+                    color: black;
+                    text-decoration: none;
+                }
+            }
+        }
+    }
+}
+
+footer {
+    background-color: $color-fondo;
+
+    h3 {
+        font-size: 22px;
+        text-align: center;
+    }
+}
+
+/* Media queries */
+
+/* Para pantallas más pequeñas */
+@media (max-width: 768px) {
+    #logo {
+        margin-left: 25px;
+    }
+
+    #libro {
+        flex-direction: column;
+
+        #front {
+            width: 100%;
+            height: auto;
+            object-position: center;
+        }
+
+        #texto1 {
+            width: 100%;
+            margin: 1rem 0;
+        }
+    }
+
+    header {
+        h1 {
+            font-size: 40px;
+        }
+
+        h2 {
+            font-size: 25px;
+        }
+
+        nav {
+            ul {
+                li {
+                    margin: 10px;
+                    font-size: 18px;
+                }
+            }
+        }
+    }
+}
+
+/* Para pantallas aún más pequeñas */
+@media (max-width: 576px) {
+    #logo {
+        margin-left: 10px;
+    }
+
+    header {
+        h1 {
+            font-size: 30px;
+        }
+
+        h2 {
+            font-size: 20px;
+        }
+
+        nav {
+            ul {
+                li {
+                    margin: 5px;
+                    font-size: 16px;
+                }
+            }
+        }
+    }
+}
+
+/*HTML libreria*/
+
+.contenedor {
+    height: 70vh;
+    background-color: $color-fondo;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(3, 33%);
+    row-gap: 1rem;
+    margin: 1rem;
+    padding: 2rem;
+}
+
+.libro1 {
+    @include productos(200px, 200px);
+}
+
+.libro2 {
+    @extend .libro1;
+}
+
+.libro3 {
+    @extend .libro1;
+}
+
+.libro4 {
+    @extend .libro1;
+}
+
+.libro5 {
+    @extend .libro1;
+}
+
+
+
+div {
+    img {
+        width: 100%;
+        object-fit: fill;
+        object-position: center;
+    }
+}
+
+.description-item {
+    border: black 1px solid;
+    background-color: $color-fondo;
+    text-align: center;
+    font-size: 170%;
+}
+
+/* Media queries */
+
+/* Para pantallas más pequeñas */
+@media (max-width: 768px) {
+    .contenedor {
+        grid-template-rows: repeat(5, 20%);
+    }
+
+    .libro1,
+    .libro2,
+    .libro3,
+    .libro4 {
+        display: none;
+    }
+
+
+    .libro5 {
+        @include productos(80%, 10%);
+        margin-bottom: 1rem;
+    }
+}
+
+/* Para pantallas aún más pequeñas */
+@media (max-width: 576px) {
+    .contenedor {
+        grid-template-rows: repeat(5, 15%);
+    }
+
+    .libro2,
+    .libro4 {
+        display: block;
+    }
+
+    .libro1,
+    .libro2,
+    .libro3,
+    .libro4,
+    .libro5 {
+        @include productos(80%, 100px);
+        margin-bottom: 1rem;
+    }
+}
+
+/*Menu*/
+.contenedor {
+    background-color: $color-fondo;
+    height: 800px;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-around;
+}
+
+
+.jugoNaranja {
+    @include productos(300px, 300px);
+}
+
+.scones {
+    @extend .jugoNaranja;
+}
+
+.tostados {
+    @extend .jugoNaranja;
+}
+
+.tazaTe {
+    @extend .jugoNaranja;
+}
+
+.tazaCafe {
+    @extend .jugoNaranja;
+}
+
+.te {
+    @extend .jugoNaranja;
+}
+
+/* Media queries */
+
+/* Para pantallas más pequeñas */
+@media (max-width: 768px) {
+    .contenedor {
+        height: auto;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .tostados {
+        display: none;
+    }
+
+    .jugoNaranja,
+    .scones,
+    .tazaTe,
+    .tazaCafe,
+    .te {
+        @include productos(80%, 10%);
+        margin-bottom: 1rem;
+    }
+}
+
+/* Para pantallas aún más pequeñas */
+@media (max-width: 576px) {
+    .contenedor {
+        height: auto;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .tostados {
+        display: none;
+    }
+
+    .jugoNaranja,
+    .scones,
+    .tazaTe,
+    .tazaCafe,
+    .te {
+        @include productos(80%, 200px);
+        margin-bottom: 1rem;
+    }
+}
+
+/*Contacto*/
+section {
+    background-color: rgb(90, 51, 18);
+
+
+    form {
+        #formulario-contacto fieldset {
+            width: 40%;
+            margin: 0 auto;
+        }
+
+        #formulario-contacto li {
+            margin: 10px;
+            list-style: none;
+        }
+
+        #formulario-contacto input {
+            margin-left: 45px;
+            text-align: left;
+        }
+
+        #formulario-contacto textarea {
+            margin-left: 10px;
+            text-align: left;
+        }
+    }
+}
+
+
+
+/* aboutUs */
+
+#hermanos {
+    margin-top: 1rem;
+    width: 450px;
+    height: 270px;
+}
+
+.hermanos-foto {
+    text-align: center;
+}
+
+.prueba {
+    width: 100%;
+    object-position: center;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.nosotros {
+    background-color: $color-fondo;
+    padding: 1rem;
+    text-align: justify;
+    font-size: 1rem;
+    padding: 2rem;
+    color: black;
+    width: 700px;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    align-self: center;
+}
+
+/* Media queries */
+
+/* Para pantallas más pequeñas */
+@media (max-width: 768px) {
+    #hermanos {
+        width: 300px;
+        height: 180px;
+    }
+
+    .nosotros {
+        width: 90%;
+        padding: 1rem;
+        margin: 1rem;
+    }
+}
+
+/* Para pantallas aún más pequeñas */
+@media (max-width: 576px) {
+    #hermanos {
+        width: 200px;
+        height: 120px;
+    }
+
+    .nosotros {
+        width: 90%;
+        padding: 1rem;
+        margin: 1rem;
+        font-size: 0.9rem;
+    }
+}

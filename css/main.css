@@ -1,0 +1,278 @@
+@charset "UTF-8";
+/* reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Roboto", sans-serif; }
+
+/* css general y main */
+#logo {
+  width: 231px;
+  height: 186px;
+  vertical-align: middle;
+  margin-left: 75px; }
+
+#libro {
+  display: flex; }
+  #libro #front {
+    width: 400px;
+    height: 250px;
+    opacity: 0.9;
+    object-position: left; }
+  #libro #texto1 {
+    text-align: justify;
+    font-size: 1rem;
+    padding: 2rem;
+    margin: 1rem;
+    background-color: rgba(248, 200, 129, 0.884);
+    color: black;
+    width: 700px; }
+
+body {
+  background-repeat: no-repeat;
+  background-image: url(../img/fondo.jpg);
+  background-size: cover; }
+  body .productos-recomendados {
+    text-align: center;
+    background-color: rgba(248, 200, 129, 0.884);
+    margin-left: 5%;
+    margin-right: 5%;
+    width: 90%; }
+
+header h1 {
+  color: #3a1500;
+  text-transform: uppercase;
+  text-decoration: underline;
+  font-size: 50px;
+  text-align: center; }
+
+header h2 {
+  color: #3a1500;
+  text-transform: uppercase;
+  font-size: 30px;
+  text-align: center; }
+
+header nav ul {
+  list-style: none;
+  text-align: center;
+  background-color: rgba(248, 200, 129, 0.884);
+  color: black; }
+  header nav ul li {
+    display: inline;
+    margin: 20px;
+    font-size: 22px; }
+    header nav ul li a {
+      color: black;
+      text-decoration: none; }
+
+footer {
+  background-color: rgba(248, 200, 129, 0.884); }
+  footer h3 {
+    font-size: 22px;
+    text-align: center; }
+
+/* Media queries */
+/* Para pantallas más pequeñas */
+@media (max-width: 768px) {
+  #logo {
+    margin-left: 25px; }
+  #libro {
+    flex-direction: column; }
+    #libro #front {
+      width: 100%;
+      height: auto;
+      object-position: center; }
+    #libro #texto1 {
+      width: 100%;
+      margin: 1rem 0; }
+  header h1 {
+    font-size: 40px; }
+  header h2 {
+    font-size: 25px; }
+  header nav ul li {
+    margin: 10px;
+    font-size: 18px; } }
+
+/* Para pantallas aún más pequeñas */
+@media (max-width: 576px) {
+  #logo {
+    margin-left: 10px; }
+  header h1 {
+    font-size: 30px; }
+  header h2 {
+    font-size: 20px; }
+  header nav ul li {
+    margin: 5px;
+    font-size: 16px; } }
+
+/*HTML libreria*/
+.contenedor {
+  height: 70vh;
+  background-color: rgba(248, 200, 129, 0.884);
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: repeat(3, 33%);
+  row-gap: 1rem;
+  margin: 1rem;
+  padding: 2rem; }
+
+.libro1, .libro2, .libro3, .libro4, .libro5 {
+  width: 200px;
+  height: 200px; }
+
+div img {
+  width: 100%;
+  object-fit: fill;
+  object-position: center; }
+
+.description-item {
+  border: black 1px solid;
+  background-color: rgba(248, 200, 129, 0.884);
+  text-align: center;
+  font-size: 170%; }
+
+/* Media queries */
+/* Para pantallas más pequeñas */
+@media (max-width: 768px) {
+  .contenedor {
+    grid-template-rows: repeat(5, 20%); }
+  .libro1, .libro2, .libro3, .libro4, .libro5,
+  .libro2,
+  .libro3,
+  .libro4 {
+    display: none; }
+  .libro5 {
+    width: 80%;
+    height: 10%;
+    margin-bottom: 1rem; } }
+
+/* Para pantallas aún más pequeñas */
+@media (max-width: 576px) {
+  .contenedor {
+    grid-template-rows: repeat(5, 15%); }
+  .libro2,
+  .libro4 {
+    display: block; }
+  .libro1, .libro2, .libro3, .libro4, .libro5,
+  .libro2,
+  .libro3,
+  .libro4,
+  .libro5 {
+    width: 80%;
+    height: 100px;
+    margin-bottom: 1rem; } }
+
+/*Menu*/
+.contenedor {
+  background-color: rgba(248, 200, 129, 0.884);
+  height: 800px;
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-around; }
+
+.jugoNaranja, .scones, .tostados, .tazaTe, .tazaCafe, .te {
+  width: 300px;
+  height: 300px; }
+
+/* Media queries */
+/* Para pantallas más pequeñas */
+@media (max-width: 768px) {
+  .contenedor {
+    height: auto;
+    flex-direction: column;
+    align-items: center; }
+  .tostados {
+    display: none; }
+  .jugoNaranja, .scones, .tostados, .tazaTe, .tazaCafe, .te,
+  .scones,
+  .tazaTe,
+  .tazaCafe,
+  .te {
+    width: 80%;
+    height: 10%;
+    margin-bottom: 1rem; } }
+
+/* Para pantallas aún más pequeñas */
+@media (max-width: 576px) {
+  .contenedor {
+    height: auto;
+    flex-direction: column;
+    align-items: center; }
+  .tostados {
+    display: none; }
+  .jugoNaranja, .scones, .tostados, .tazaTe, .tazaCafe, .te,
+  .scones,
+  .tazaTe,
+  .tazaCafe,
+  .te {
+    width: 80%;
+    height: 200px;
+    margin-bottom: 1rem; } }
+
+/*Contacto*/
+section {
+  background-color: #5a3312; }
+  section form #formulario-contacto fieldset {
+    width: 40%;
+    margin: 0 auto; }
+  section form #formulario-contacto li {
+    margin: 10px;
+    list-style: none; }
+  section form #formulario-contacto input {
+    margin-left: 45px;
+    text-align: left; }
+  section form #formulario-contacto textarea {
+    margin-left: 10px;
+    text-align: left; }
+
+/* aboutUs */
+#hermanos {
+  margin-top: 1rem;
+  width: 450px;
+  height: 270px; }
+
+.hermanos-foto {
+  text-align: center; }
+
+.prueba {
+  width: 100%;
+  object-position: center;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center; }
+
+.nosotros {
+  background-color: rgba(248, 200, 129, 0.884);
+  padding: 1rem;
+  text-align: justify;
+  font-size: 1rem;
+  padding: 2rem;
+  color: black;
+  width: 700px;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+  align-self: center; }
+
+/* Media queries */
+/* Para pantallas más pequeñas */
+@media (max-width: 768px) {
+  #hermanos {
+    width: 300px;
+    height: 180px; }
+  .nosotros {
+    width: 90%;
+    padding: 1rem;
+    margin: 1rem; } }
+
+/* Para pantallas aún más pequeñas */
+@media (max-width: 576px) {
+  #hermanos {
+    width: 200px;
+    height: 120px; }
+  .nosotros {
+    width: 90%;
+    padding: 1rem;
+    margin: 1rem;
+    font-size: 0.9rem; } }
